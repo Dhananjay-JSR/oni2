@@ -45,6 +45,8 @@ jobs:
        # Runs a single command using the runners shell
       - name: Installing Node dependency
         run: npm install -g node-gyp
+        
+
        
       - name: Installing ESY
         run: npm install -g esy@latest
@@ -54,6 +56,14 @@ jobs:
         
       - name: Installing ESP Bootstrap
         run: esy bootstrap
+        
+        #Experimental Test
+      - name: Install VSCode Extention
+        run: |
+            cd node,
+            npm install,
+            cd ..
+            
         
       - name: Building Remaining Files
         run: esy build
