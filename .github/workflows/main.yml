@@ -37,12 +37,29 @@ jobs:
       # Runs a single command using the runners shell
       - name: Installing Windows Build Tool
         run:  choco install python visualstudio2017-workload-vctools -y
+        
+      - name: Setting Up 2017 Vcode in NPM
+        run: npm config set msvs_version 2017
              
        
        # Runs a single command using the runners shell
       - name: Installing Node dependency
         run: npm install -g node-gyp
        
+      - name: Installing ESY
+        run: npm install -g esy@latest
+        
+      - name: Installing ESY Packages
+        run: esy install
+        
+      - name: Installing ESP Bootstrap
+        run: esy bootstrap
+        
+      - name: Building Remaining Files
+        run: esy build
+        
+      - name: Checking Build ( Health Check)
+        run: esy run -f --checkhealth
 
 
        
