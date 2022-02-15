@@ -30,6 +30,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Setup Chocolatey
         uses: crazy-max/ghaction-chocolatey@v1.6.0
+        with:
+            args: -h
       
 
       # Runs a single command using the runners shell
