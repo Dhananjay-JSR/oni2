@@ -29,11 +29,14 @@ jobs:
           
         #DELETE THIS PLEASE
       - name: Install VSCode Extention
-        run: |
-            cd node,
-            npm install,
-            cd ..
-            
+        working-directory: ./node
+        run: npm install
+        
+      - name: reverting back to Old
+        working-directory: ../
+        run: pwd
+        
+        # Dlete This
           
       # Runs a single command using the runners shell
       - name: Setup Chocolatey
