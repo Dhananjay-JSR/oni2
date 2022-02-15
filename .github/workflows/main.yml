@@ -27,16 +27,6 @@ jobs:
         with:
           node-version: '14'
           
-        #DELETE THIS PLEASE
-      - name: Install VSCode Extention
-        working-directory: ./node
-        run: npm install
-        
-      - name: reverting back to Old
-        working-directory: ../
-        run: pwd
-        
-        # Dlete This
           
       # Runs a single command using the runners shell
       - name: Setup Chocolatey
@@ -58,6 +48,16 @@ jobs:
         run: npm install -g node-gyp
         
 
+        #DELETE THIS PLEASE
+      - name: Install VSCode Extention
+        working-directory: ./node
+        run: npm install
+        
+      - name: reverting back to Old
+        working-directory: ../
+        run: pwd
+        
+        # Dlete This
        
       - name: Installing ESY
         run: npm install -g esy@latest
