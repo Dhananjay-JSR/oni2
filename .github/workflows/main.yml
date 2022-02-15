@@ -67,15 +67,7 @@ jobs:
         
       - name: Installing ESP Bootstrap
         run: esy bootstrap
-        
-        #Experimental Test
-      - name: Install VSCode Extention
-        run: |
-            cd node,
-            npm install,
-            cd ..
-            
-        
+               
       - name: Building Remaining Files
         run: esy build
         
