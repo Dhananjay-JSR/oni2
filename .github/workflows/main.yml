@@ -27,6 +27,14 @@ jobs:
         with:
           node-version: '14'
           
+        #DELETE THIS PLEASE
+      - name: Install VSCode Extention
+        run: |
+            cd node,
+            npm install,
+            cd ..
+            
+          
       # Runs a single command using the runners shell
       - name: Setup Chocolatey
         uses: crazy-max/ghaction-chocolatey@v1.6.0
