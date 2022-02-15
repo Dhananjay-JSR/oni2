@@ -74,11 +74,13 @@ jobs:
       - name: Checking Build ( Health Check)
         run: esy run -f --checkhealth
         
+
+      - name: Release Install
+        run: esy '@release' install
+        
       - name: Release Health Check
         run: esy '@release' run -f --checkhealth
         
-      - name: Release Install
-        run: esy '@release' install
         
       - name: Run Help
         run: esy '@release' run --help
