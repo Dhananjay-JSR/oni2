@@ -73,12 +73,26 @@ jobs:
         
       - name: Checking Build ( Health Check)
         run: esy run -f --checkhealth
-
+        
+      - name: Release Health Check
+        run: esy '@release' run -f --checkhealth
+        
+      - name: Release Install
+        run: esy '@release' install
+        
+      - name: Run Help
+        run: esy '@release' run --help
+        
+      - name: Run Create
+        run: esy '@release' create
+        
+      - name: Create Zip
+        run: 7z a myzip ./_esy/*
 
        
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          Ready,
-          npm config set msvs_version 2017,
-          echo test, and deploy your project.
+      - name: GH Release
+        uses: softprops/action-gh-release@v0.1.13
+        with:
+          tag_name: main
+          files: myzip.zip
